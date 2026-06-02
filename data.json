@@ -1,0 +1,169 @@
+{
+  "_generated": "2026-06-02",
+  "_generator": "github-actions",
+  "totalVideos": "3410+",
+  "totalSubs": 221,
+  "genDate": "2026-06-02",
+  "displayDate": "Jun 2, 2026",
+  "kpiViews": 55,
+  "kpiWatch": 0.6,
+  "kpiWatchYoY": -48,
+  "kpiSubChange": 1,
+  "kpiSubYoY": 0,
+  "kpiImpressions": 130000,
+  "kpiImpYoY": 0,
+  "kpiCTR": 2.5,
+  "eraSplit": 0,
+  "trends": [],
+  "subs": [],
+  "videos": [
+    {
+      "title": "Lebanon Ohio Condo for Sale Lebanon Ohio  Real Estate 2340 Bendel Warren County",
+      "era": "pre",
+      "date": "Oct 24, 2013",
+      "views": 15,
+      "dur": "0:49",
+      "ret": 44.1
+    },
+    {
+      "title": "Homes for Sale in Lebanon, OH 923 Evergreen - Lebanon Ohio Realtor John Bissman Keller Williams",
+      "era": "pre",
+      "date": "Dec 18, 2013",
+      "views": 6,
+      "dur": "0:35",
+      "ret": 18.7
+    },
+    {
+      "title": "Home for Sale - Warren County Ranch home with Land - 8453 Morrow Woodville Road",
+      "era": "pre",
+      "date": "Dec 18, 2013",
+      "views": 6,
+      "dur": "0:49",
+      "ret": 34.5
+    },
+    {
+      "title": "Lebanon Ohio Home for Sale - Country Living Peaceful Home - 2897Shawhan Lebanon Schools",
+      "era": "pre",
+      "date": "Feb 14, 2014",
+      "views": 6,
+      "dur": "0:15",
+      "ret": 6.4
+    },
+    {
+      "title": "Home for Sale, Goshen Ohio 1783 Hill Station Road, Goshen OH 45122 House for Sale",
+      "era": "pre",
+      "date": "Jan 28, 2014",
+      "views": 5,
+      "dur": "0:27",
+      "ret": 14.0
+    },
+    {
+      "title": "Homes for Sale in Lebanon, OH 923 Evergreen - Lebanon Ohio Realtor John Bissman Keller Williams",
+      "era": "pre",
+      "date": "Dec 19, 2013",
+      "views": 5,
+      "dur": "0:22",
+      "ret": 12.1
+    },
+    {
+      "title": "Property Search - Warren County, Ohio  How to Contest Warren County Property Valuations",
+      "era": "pre",
+      "date": "Mar 16, 2014",
+      "views": 3,
+      "dur": "1:21",
+      "ret": 74.9
+    },
+    {
+      "title": "Keller Williams Real Estate App - Find Homes App - Win $50,000",
+      "era": "pre",
+      "date": "Feb 6, 2014",
+      "views": 2,
+      "dur": "0:10",
+      "ret": 15.6
+    },
+    {
+      "title": "Homes in Lebanon Ohio 45036 for Sale - Historic Home in Downtown Lebanon 314 East Main - Must See",
+      "era": "pre",
+      "date": "Dec 27, 2013",
+      "views": 2,
+      "dur": "1:37",
+      "ret": 68.6
+    },
+    {
+      "title": "IQ Custom Homes - Home Builder in Cincinnati Area - Build your own custom home",
+      "era": "pre",
+      "date": "Jun 27, 2013",
+      "views": 2,
+      "dur": "0:37",
+      "ret": 9.1
+    },
+    {
+      "title": "Peaceful Baptism Waterfal",
+      "era": "pre",
+      "date": "Nov 23, 2020",
+      "views": 2,
+      "dur": "0:03",
+      "ret": 21.3
+    },
+    {
+      "title": "Property Search - Hamilton County, Ohio How to Contest Hamilton County Property Valuations",
+      "era": "pre",
+      "date": "Mar 16, 2014",
+      "views": 1,
+      "dur": "0:27",
+      "ret": 25.9
+    }
+  ],
+  "traffic": [
+    {
+      "name": "YouTube Search",
+      "pct": 65.5
+    },
+    {
+      "name": "External Sites",
+      "pct": 21.8
+    },
+    {
+      "name": "Channel Pages",
+      "pct": 5.5
+    },
+    {
+      "name": "Suggested",
+      "pct": 3.6
+    },
+    {
+      "name": "Direct / Unknown",
+      "pct": 1.8
+    },
+    {
+      "name": "YouTube Other",
+      "pct": 1.8
+    }
+  ],
+  "retention": [
+    {
+      "name": "Lebanon Ohio Condo for Sale Leba…",
+      "pct": 44.1
+    },
+    {
+      "name": "Homes for Sale in Lebanon",
+      "pct": 18.7
+    },
+    {
+      "name": "Home for Sale - Warren County Ra…",
+      "pct": 34.5
+    },
+    {
+      "name": "Lebanon Ohio Home for Sale - Cou…",
+      "pct": 6.4
+    },
+    {
+      "name": "Home for Sale",
+      "pct": 14.0
+    },
+    {
+      "name": "Homes for Sale in Lebanon",
+      "pct": 12.1
+    }
+  ]
+}
