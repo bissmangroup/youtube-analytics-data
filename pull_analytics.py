@@ -22,6 +22,7 @@ from googleapiclient.errors import HttpError
 
 # ---------- CONFIG ----------
 CHANNEL_ID = os.environ.get("YT_CHANNEL_ID", "UCJiMGnm9J9TBQKCyh9sFTPA")
+CHANNEL_FILTER = f"channel=={CHANNEL_ID}"  # explicit channel ID — avoids brand-account OAuth ambiguity
 ERA_SPLIT_YEAR = 2025
 ERA_SPLIT_MONTH = 9          # September 2025 — music era begins
 NUM_TOP_VIDEOS = 15
@@ -70,13 +71,19 @@ def add_months(d, n):
 
 
 def safe(label, fn, default=None):
-    """Run an API call defensively; log and continue on failure."""
+    """Run an API call defensively; log full error and continue on failure."""
     try:
         return fn()
     except HttpError as e:
-        print(f"  [{label}] HttpError: {e}")
+        # Get the full response body, not just the status — Google sends useful detail there
+        body = ""
+        try:
+            body = e.content.decode("utf-8") if e.content else ""
+        except Exception:
+            body = str(e)
+        print(f"  ⚠ [{label}] HttpError {e.resp.status if hasattr(e, 'resp') else '?'}: {body[:500]}")
     except Exception as e:
-        print(f"  [{label}] Error: {e}")
+        print(f"  ⚠ [{label}] {type(e).__name__}: {e}")
         traceback.print_exc()
     return default
 
@@ -97,7 +104,7 @@ def pull_kpis(analytics, today):
     prev_start = prev_end - datetime.timedelta(days=365)
 
     cur = analytics.reports().query(
-        ids="channel==MINE",
+        ids=CHANNEL_FILTER,
         startDate=start.isoformat(),
         endDate=end.isoformat(),
         metrics="views,estimatedMinutesWatched,subscribersGained,subscribersLost,averageViewDuration,averageViewPercentage",
@@ -106,7 +113,7 @@ def pull_kpis(analytics, today):
     views, mins, sg, sl, avg_dur, avg_pct = cur_row
 
     prev = analytics.reports().query(
-        ids="channel==MINE",
+        ids=CHANNEL_FILTER,
         startDate=prev_start.isoformat(),
         endDate=prev_end.isoformat(),
         metrics="views,estimatedMinutesWatched,subscribersGained,subscribersLost",
@@ -132,7 +139,7 @@ def pull_monthly_trends(analytics, today, months=16):
     end = first_of_month(today) - datetime.timedelta(days=1)
 
     res = analytics.reports().query(
-        ids="channel==MINE",
+        ids=CHANNEL_FILTER,
         startDate=start.isoformat(),
         endDate=end.isoformat(),
         metrics="views,estimatedMinutesWatched",
@@ -224,7 +231,7 @@ def pull_subscriber_timeline(analytics, today, total_subs, months=16):
     end = first_of_month(today) - datetime.timedelta(days=1)
 
     res = analytics.reports().query(
-        ids="channel==MINE",
+        ids=CHANNEL_FILTER,
         startDate=start.isoformat(),
         endDate=end.isoformat(),
         metrics="subscribersGained,subscribersLost",
@@ -263,7 +270,7 @@ def pull_top_videos(analytics, data_api, today, n=15):
     start = today - datetime.timedelta(days=365)
 
     res = analytics.reports().query(
-        ids="channel==MINE",
+        ids=CHANNEL_FILTER,
         startDate=start.isoformat(),
         endDate=end.isoformat(),
         metrics="views,averageViewDuration,averageViewPercentage",
@@ -328,7 +335,7 @@ def pull_traffic_sources(analytics, today):
     start = today - datetime.timedelta(days=365)
 
     res = analytics.reports().query(
-        ids="channel==MINE",
+        ids=CHANNEL_FILTER,
         startDate=start.isoformat(),
         endDate=end.isoformat(),
         metrics="views",
@@ -420,7 +427,13 @@ def compute_era_split(trends):
 def main():
     check_env()
     print(f"YouTube Analytics Pull — {datetime.date.today()}")
-    print(f"Channel: {CHANNEL_ID}\n")
+    print(f"Channel ID:     {CHANNEL_ID}")
+    print(f"Channel filter: {CHANNEL_FILTER}")
+    print(f"")
+    print(f"Note: this script uses an explicit channel ID (not channel==MINE).")
+    print(f"The OAuth account must be a manager/owner of this channel.")
+    print(f"If you see 403 errors below, the auth account doesn't have access.")
+    print(f"")
 
     creds = get_credentials()
     analytics = build("youtubeAnalytics", "v2", credentials=creds, cache_discovery=False)
