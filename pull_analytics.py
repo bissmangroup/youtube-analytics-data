@@ -22,7 +22,9 @@ from googleapiclient.errors import HttpError
 
 # ---------- CONFIG ----------
 CHANNEL_ID = os.environ.get("YT_CHANNEL_ID", "UCJiMGnm9J9TBQKCyh9sFTPA")
-CHANNEL_FILTER = f"channel=={CHANNEL_ID}"  # explicit channel ID — avoids brand-account OAuth ambiguity
+# Note: YouTube Analytics API requires `channel==MINE` for channel-level reports.
+# Explicit channel IDs require content-owner credentials, which a regular OAuth user lacks.
+# CHANNEL_ID is used only for Data API lookups (channel stats, uploads playlist).
 ERA_SPLIT_YEAR = 2025
 ERA_SPLIT_MONTH = 9          # September 2025 — music era begins
 NUM_TOP_VIDEOS = 15
@@ -104,7 +106,7 @@ def pull_kpis(analytics, today):
     prev_start = prev_end - datetime.timedelta(days=365)
 
     cur = analytics.reports().query(
-        ids=CHANNEL_FILTER,
+        ids="channel==MINE",
         startDate=start.isoformat(),
         endDate=end.isoformat(),
         metrics="views,estimatedMinutesWatched,subscribersGained,subscribersLost,averageViewDuration,averageViewPercentage",
@@ -113,7 +115,7 @@ def pull_kpis(analytics, today):
     views, mins, sg, sl, avg_dur, avg_pct = cur_row
 
     prev = analytics.reports().query(
-        ids=CHANNEL_FILTER,
+        ids="channel==MINE",
         startDate=prev_start.isoformat(),
         endDate=prev_end.isoformat(),
         metrics="views,estimatedMinutesWatched,subscribersGained,subscribersLost",
@@ -134,37 +136,44 @@ def pull_kpis(analytics, today):
 
 
 def pull_monthly_trends(analytics, today, months=16):
+    """Pull daily views/watch and aggregate to monthly buckets.
+
+    We use dimension=day rather than dimension=month because the API rejects
+    monthly queries when the end date doesn't fall on a recognized boundary.
+    Aggregating in Python is straightforward and avoids that quirk.
+    """
     print(f"Pulling monthly trends ({months} months)...")
     start = add_months(first_of_month(today), -months)
     end = first_of_month(today) - datetime.timedelta(days=1)
 
     res = analytics.reports().query(
-        ids=CHANNEL_FILTER,
+        ids="channel==MINE",
         startDate=start.isoformat(),
         endDate=end.isoformat(),
         metrics="views,estimatedMinutesWatched",
-        dimensions="month",
-        sort="month",
+        dimensions="day",
+        sort="day",
+        maxResults=10000,
     ).execute()
 
     by_month = {}
     for row in res.get("rows", []):
-        ym = row[0]
-        year, month = map(int, ym.split("-"))
-        by_month[(year, month)] = {
-            "views": int(row[1]),
-            "watch": round(row[2] / 60, 1),
-        }
+        ymd = row[0]  # YYYY-MM-DD
+        year, month, _ = ymd.split("-")
+        key = (int(year), int(month))
+        bucket = by_month.setdefault(key, {"views": 0, "watch_min": 0})
+        bucket["views"] += int(row[1])
+        bucket["watch_min"] += float(row[2])
 
     trends = []
     cursor = start
     for _ in range(months):
         key = (cursor.year, cursor.month)
-        m = by_month.get(key, {"views": 0, "watch": 0})
+        m = by_month.get(key, {"views": 0, "watch_min": 0})
         trends.append({
             "month": month_label(cursor.year, cursor.month),
             "views": m["views"],
-            "watch": m["watch"],
+            "watch": round(m["watch_min"] / 60, 1),
             "uploads": 0,  # filled in by pull_monthly_uploads
         })
         cursor = add_months(cursor, 1)
@@ -223,7 +232,10 @@ def pull_monthly_uploads(data_api, channel_id, trends):
 
 
 def pull_subscriber_timeline(analytics, today, total_subs, months=16):
-    """Build a cumulative subscriber timeline from monthly deltas."""
+    """Build a cumulative subscriber timeline from daily deltas.
+
+    Same rationale as monthly_trends: use dimension=day and aggregate.
+    """
     print("Pulling subscriber timeline...")
     if total_subs is None:
         return []
@@ -231,22 +243,31 @@ def pull_subscriber_timeline(analytics, today, total_subs, months=16):
     end = first_of_month(today) - datetime.timedelta(days=1)
 
     res = analytics.reports().query(
-        ids=CHANNEL_FILTER,
+        ids="channel==MINE",
         startDate=start.isoformat(),
         endDate=end.isoformat(),
         metrics="subscribersGained,subscribersLost",
-        dimensions="month",
-        sort="month",
+        dimensions="day",
+        sort="day",
+        maxResults=10000,
     ).execute()
 
-    rows = res.get("rows", [])
+    # Aggregate daily deltas into monthly buckets
+    by_month = {}
+    for row in res.get("rows", []):
+        ymd = row[0]  # YYYY-MM-DD
+        year, month, _ = ymd.split("-")
+        key = (int(year), int(month))
+        bucket = by_month.setdefault(key, {"gained": 0, "lost": 0})
+        bucket["gained"] += int(row[1])
+        bucket["lost"] += int(row[2])
+
     deltas = []
     cursor = start
     for _ in range(months):
-        ym = f"{cursor.year}-{cursor.month:02d}"
-        found = next((r for r in rows if r[0] == ym), None)
-        delta = int(found[1] - found[2]) if found else 0
-        deltas.append((month_label(cursor.year, cursor.month), delta))
+        key = (cursor.year, cursor.month)
+        b = by_month.get(key, {"gained": 0, "lost": 0})
+        deltas.append((month_label(cursor.year, cursor.month), b["gained"] - b["lost"]))
         cursor = add_months(cursor, 1)
 
     # Walk backward from current total to compute monthly snapshots
@@ -270,7 +291,7 @@ def pull_top_videos(analytics, data_api, today, n=15):
     start = today - datetime.timedelta(days=365)
 
     res = analytics.reports().query(
-        ids=CHANNEL_FILTER,
+        ids="channel==MINE",
         startDate=start.isoformat(),
         endDate=end.isoformat(),
         metrics="views,averageViewDuration,averageViewPercentage",
@@ -335,7 +356,7 @@ def pull_traffic_sources(analytics, today):
     start = today - datetime.timedelta(days=365)
 
     res = analytics.reports().query(
-        ids=CHANNEL_FILTER,
+        ids="channel==MINE",
         startDate=start.isoformat(),
         endDate=end.isoformat(),
         metrics="views",
@@ -427,12 +448,8 @@ def compute_era_split(trends):
 def main():
     check_env()
     print(f"YouTube Analytics Pull — {datetime.date.today()}")
-    print(f"Channel ID:     {CHANNEL_ID}")
-    print(f"Channel filter: {CHANNEL_FILTER}")
-    print(f"")
-    print(f"Note: this script uses an explicit channel ID (not channel==MINE).")
-    print(f"The OAuth account must be a manager/owner of this channel.")
-    print(f"If you see 403 errors below, the auth account doesn't have access.")
+    print(f"Data API channel: {CHANNEL_ID}")
+    print(f"Analytics scope:  channel==MINE (resolves to OAuth account's primary channel)")
     print(f"")
 
     creds = get_credentials()
