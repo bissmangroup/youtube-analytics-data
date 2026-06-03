@@ -5,11 +5,11 @@
   "totalSubs": 221,
   "genDate": "2026-06-03",
   "displayDate": "Jun 3, 2026",
-  "kpiViews": 56,
-  "kpiWatch": 0.6,
-  "kpiWatchYoY": -48,
-  "kpiSubChange": 1,
-  "kpiSubYoY": 0,
+  "kpiViews": 8846,
+  "kpiWatch": 173.7,
+  "kpiWatchYoY": 132,
+  "kpiSubChange": 18,
+  "kpiSubYoY": 64,
   "kpiImpressions": 130000,
   "kpiImpYoY": 0,
   "kpiCTR": 2.5,
@@ -17,279 +17,307 @@
   "trends": [
     {
       "month": "Feb 25",
-      "views": 2,
-      "watch": 0.0,
+      "views": 314,
+      "watch": 6.2,
       "uploads": 2
     },
     {
       "month": "Mar 25",
-      "views": 2,
-      "watch": 0.0,
+      "views": 661,
+      "watch": 11.7,
       "uploads": 7
     },
     {
       "month": "Apr 25",
-      "views": 3,
-      "watch": 0.0,
+      "views": 371,
+      "watch": 7.4,
       "uploads": 2
     },
     {
       "month": "May 25",
-      "views": 4,
-      "watch": 0.1,
+      "views": 532,
+      "watch": 8.6,
       "uploads": 11
     },
     {
       "month": "Jun 25",
-      "views": 2,
-      "watch": 0.0,
+      "views": 466,
+      "watch": 6.5,
       "uploads": 1
     },
     {
       "month": "Jul 25",
-      "views": 3,
-      "watch": 0.0,
+      "views": 1036,
+      "watch": 13.6,
       "uploads": 7
     },
     {
       "month": "Aug 25",
-      "views": 4,
-      "watch": 0.0,
+      "views": 637,
+      "watch": 9.7,
       "uploads": 7
     },
     {
       "month": "Sep 25",
-      "views": 4,
-      "watch": 0.0,
+      "views": 824,
+      "watch": 16.2,
       "uploads": 10
     },
     {
       "month": "Oct 25",
-      "views": 6,
-      "watch": 0.0,
+      "views": 843,
+      "watch": 16.2,
       "uploads": 10
     },
     {
       "month": "Nov 25",
-      "views": 6,
-      "watch": 0.1,
+      "views": 435,
+      "watch": 8.7,
       "uploads": 2
     },
     {
       "month": "Dec 25",
-      "views": 4,
-      "watch": 0.0,
+      "views": 1058,
+      "watch": 28.6,
       "uploads": 5
     },
     {
       "month": "Jan 26",
-      "views": 3,
-      "watch": 0.0,
+      "views": 675,
+      "watch": 14.8,
       "uploads": 3
     },
     {
       "month": "Feb 26",
-      "views": 4,
-      "watch": 0.0,
+      "views": 414,
+      "watch": 7.5,
       "uploads": 0
     },
     {
       "month": "Mar 26",
-      "views": 5,
-      "watch": 0.1,
+      "views": 582,
+      "watch": 9.9,
       "uploads": 3
     },
     {
       "month": "Apr 26",
-      "views": 13,
-      "watch": 0.1,
+      "views": 891,
+      "watch": 17.3,
       "uploads": 12
     },
     {
       "month": "May 26",
-      "views": 2,
-      "watch": 0.0,
+      "views": 1016,
+      "watch": 22.2,
       "uploads": 8
     }
   ],
   "subs": [
     {
       "month": "Feb 25",
-      "value": 220
+      "value": 197
     },
     {
       "month": "Apr 25",
-      "value": 220
+      "value": 201
     },
     {
       "month": "Jun 25",
-      "value": 220
+      "value": 205
     },
     {
       "month": "Aug 25",
-      "value": 221
+      "value": 210
     },
     {
       "month": "Oct 25",
-      "value": 221
+      "value": 214
     },
     {
       "month": "Dec 25",
-      "value": 221
+      "value": 214
     },
     {
       "month": "Feb 26",
-      "value": 221
+      "value": 214
     }
   ],
   "videos": [
     {
-      "title": "Lebanon Ohio Condo for Sale Lebanon Ohio  Real Estate 2340 Bendel Warren County",
+      "title": "Nature Lover’s Paradise with 6.4 acres 9 Car Garage & Sunroom | 1711 McClellan Rd Xenia Ohio 45385",
       "era": "pre",
-      "date": "Oct 24, 2013",
-      "views": 15,
-      "dur": "0:49",
-      "ret": 44.1
+      "date": "Jul 18, 2025",
+      "views": 563,
+      "dur": "0:39",
+      "ret": 35.0
     },
     {
-      "title": "Home for Sale - Warren County Ranch home with Land - 8453 Morrow Woodville Road",
-      "era": "pre",
-      "date": "Dec 18, 2013",
-      "views": 7,
-      "dur": "0:45",
-      "ret": 31.7
+      "title": "5654 Wilmington Road, Oregonia, Ohio 45054  21+ Acres  Horse Barn  Pond  Family Homestead Stunning",
+      "era": "post",
+      "date": "Nov 26, 2025",
+      "views": 294,
+      "dur": "1:48",
+      "ret": 47.2
     },
     {
-      "title": "Homes for Sale in Lebanon, OH 923 Evergreen - Lebanon Ohio Realtor John Bissman Keller Williams",
+      "title": "House for Sale - MODERN FARMHOUSE ON 2+ ACRES | 1801 Kirby Rd, Lebanon, OH 45036 First Floor Primary",
       "era": "pre",
-      "date": "Dec 18, 2013",
-      "views": 6,
-      "dur": "0:35",
-      "ret": 18.7
+      "date": "Jul 21, 2025",
+      "views": 251,
+      "dur": "0:55",
+      "ret": 52.6
     },
     {
-      "title": "Lebanon Ohio Home for Sale - Country Living Peaceful Home - 2897Shawhan Lebanon Schools",
+      "title": "Own This Iconic Ohio Bar on the River! | Little River Bar & Grill | $1.5M Commercial Property",
       "era": "pre",
-      "date": "Feb 14, 2014",
-      "views": 6,
-      "dur": "0:15",
-      "ret": 6.4
+      "date": "Mar 25, 2025",
+      "views": 205,
+      "dur": "1:32",
+      "ret": 57.2
     },
     {
-      "title": "Home for Sale, Goshen Ohio 1783 Hill Station Road, Goshen OH 45122 House for Sale",
-      "era": "pre",
-      "date": "Jan 28, 2014",
-      "views": 5,
-      "dur": "0:27",
-      "ret": 14.0
+      "title": "2622 Moore Rd Bethel Ohio 45106 | 6.63 Acre Wooded Home for Sale | 3 Bed 3 Bath with Covered Deck",
+      "era": "post",
+      "date": "May 22, 2026",
+      "views": 186,
+      "dur": "1:07",
+      "ret": 37.2
     },
     {
-      "title": "Homes for Sale in Lebanon, OH 923 Evergreen - Lebanon Ohio Realtor John Bissman Keller Williams",
-      "era": "pre",
-      "date": "Dec 19, 2013",
-      "views": 5,
-      "dur": "0:22",
-      "ret": 12.1
+      "title": "Hamilton Ohio Home for Sale | 1226 Clearview Place Updated 2 Bedroom House with Garage & Fenced Yard",
+      "era": "post",
+      "date": "Sep 2, 2025",
+      "views": 168,
+      "dur": "0:38",
+      "ret": 57.2
     },
     {
-      "title": "Property Search - Warren County, Ohio  How to Contest Warren County Property Valuations",
+      "title": "Fully Renovated Home for Sale in  Fairfield Twp 6399 Kimberly Dr | 4 Bed | Dream Kitchen |",
       "era": "pre",
-      "date": "Mar 16, 2014",
-      "views": 3,
-      "dur": "1:21",
-      "ret": 74.9
+      "date": "May 16, 2025",
+      "views": 160,
+      "dur": "0:39",
+      "ret": 44.7
     },
     {
-      "title": "Keller Williams Real Estate App - Find Homes App - Win $50,000",
-      "era": "pre",
-      "date": "Feb 6, 2014",
-      "views": 2,
-      "dur": "0:10",
-      "ret": 15.6
+      "title": "2174 Belloak Dr Kettering Ohio 45440 Dayton Ohio Home for Sale | Large Basement Near Wright-Patt",
+      "era": "post",
+      "date": "Mar 13, 2026",
+      "views": 159,
+      "dur": "1:04",
+      "ret": 32.3
     },
     {
-      "title": "Homes in Lebanon Ohio 45036 for Sale - Historic Home in Downtown Lebanon 314 East Main - Must See",
-      "era": "pre",
-      "date": "Dec 27, 2013",
-      "views": 2,
-      "dur": "1:37",
-      "ret": 68.6
+      "title": "Rona Hills Custom Built 4-Bedroom Home – 625 Sharon Dr, Fairborn, OH 45324 | For Sale House for Sale",
+      "era": "post",
+      "date": "Sep 11, 2025",
+      "views": 154,
+      "dur": "0:54",
+      "ret": 72.6
     },
     {
-      "title": "IQ Custom Homes - Home Builder in Cincinnati Area - Build your own custom home",
+      "title": "Move-In Ready 2-Bedroom Paired Patio Fischer Home in Lebanon OH 45036 | The Lot in Summerlyn Farms",
       "era": "pre",
-      "date": "Jun 27, 2013",
-      "views": 2,
-      "dur": "0:37",
-      "ret": 9.1
+      "date": "Aug 1, 2025",
+      "views": 152,
+      "dur": "0:58",
+      "ret": 63.9
     },
     {
-      "title": "Peaceful Baptism Waterfal",
+      "title": "Farmhouse with Pool and In-Law Guest Suite 9+ Acres–4752 E Lower Springboro Rd, Waynesville OH 45068",
       "era": "pre",
-      "date": "Nov 23, 2020",
-      "views": 2,
-      "dur": "0:03",
-      "ret": 21.3
+      "date": "Aug 22, 2025",
+      "views": 148,
+      "dur": "1:19",
+      "ret": 60.1
     },
     {
-      "title": "Property Search - Hamilton County, Ohio How to Contest Hamilton County Property Valuations",
+      "title": "Lebanon Landing Townhomes by Justin Doyle Homes – Lebanon, Ohio 45036 New Townhomes Lebanon Ohio",
+      "era": "post",
+      "date": "Dec 26, 2025",
+      "views": 134,
+      "dur": "1:00",
+      "ret": 32.4
+    },
+    {
+      "title": "Historic Hammel House | 121 S Main St, Waynesville, OH 45068 | Iconic Commercial Opportunity Airbnb",
+      "era": "post",
+      "date": "Apr 14, 2026",
+      "views": 129,
+      "dur": "1:51",
+      "ret": 51.3
+    },
+    {
+      "title": "Luxury Ranch in Miami Bluffs | 1556 Sycamore Ridge Dr Cincinnati Ohio | Finished Walkout Basement",
       "era": "pre",
-      "date": "Mar 16, 2014",
-      "views": 1,
-      "dur": "0:27",
-      "ret": 25.9
+      "date": "May 30, 2025",
+      "views": 128,
+      "dur": "1:08",
+      "ret": 51.0
+    },
+    {
+      "title": "1105 Mockingbird Lane, Lebanon, Ohio 45036 – Ranch Home with New Inground Pool & Privacy - For Sale",
+      "era": "post",
+      "date": "Oct 4, 2025",
+      "views": 128,
+      "dur": "1:25",
+      "ret": 49.4
     }
   ],
   "traffic": [
     {
-      "name": "YouTube Search",
-      "pct": 66.1
-    },
-    {
       "name": "External Sites",
-      "pct": 21.4
+      "pct": 34.6
     },
     {
-      "name": "Channel Pages",
-      "pct": 5.4
+      "name": "YouTube Search",
+      "pct": 23.8
     },
     {
-      "name": "Suggested",
-      "pct": 3.6
+      "name": "Subscriptions Feed",
+      "pct": 14.5
+    },
+    {
+      "name": "Playlists",
+      "pct": 13.8
     },
     {
       "name": "Direct / Unknown",
-      "pct": 1.8
+      "pct": 4.7
     },
     {
-      "name": "YouTube Other",
-      "pct": 1.8
+      "name": "Suggested",
+      "pct": 4.4
+    },
+    {
+      "name": "Channel Pages",
+      "pct": 2.7
     }
   ],
   "retention": [
     {
-      "name": "Lebanon Ohio Condo for Sale Leba…",
-      "pct": 44.1
+      "name": "Nature Lover’s Paradise with 6.4…",
+      "pct": 35.0
     },
     {
-      "name": "Home for Sale - Warren County Ra…",
-      "pct": 31.7
+      "name": "5654 Wilmington Road",
+      "pct": 47.2
     },
     {
-      "name": "Homes for Sale in Lebanon",
-      "pct": 18.7
+      "name": "House for Sale - MODERN FARMHOUS…",
+      "pct": 52.6
     },
     {
-      "name": "Lebanon Ohio Home for Sale - Cou…",
-      "pct": 6.4
+      "name": "Own This Iconic Ohio Bar on the …",
+      "pct": 57.2
     },
     {
-      "name": "Home for Sale",
-      "pct": 14.0
+      "name": "2622 Moore Rd Bethel Ohio 45106 …",
+      "pct": 37.2
     },
     {
-      "name": "Homes for Sale in Lebanon",
-      "pct": 12.1
+      "name": "Hamilton Ohio Home for Sale | 12…",
+      "pct": 57.2
     }
   ]
 }
