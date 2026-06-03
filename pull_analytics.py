@@ -135,6 +135,77 @@ def pull_kpis(analytics, today):
     }
 
 
+def pull_lifetime_kpis(analytics, today):
+    """Channel lifetime KPIs.
+
+    Queries from 2008-01-01 (before YouTube even allowed many of these channels)
+    to today, capturing the entire channel history.
+    """
+    print("Pulling lifetime KPIs...")
+    start = datetime.date(2008, 1, 1)
+
+    res = analytics.reports().query(
+        ids="channel==MINE",
+        startDate=start.isoformat(),
+        endDate=today.isoformat(),
+        metrics="views,estimatedMinutesWatched,subscribersGained,subscribersLost,averageViewDuration",
+    ).execute()
+    row = res["rows"][0] if res.get("rows") else [0] * 5
+    views, mins, sg, sl, avg_dur = row
+
+    return {
+        "views": int(views),
+        "watch_hours": round(mins / 60, 1),
+        "sub_change": int(sg - sl),
+        "subs_gained": int(sg),
+        "subs_lost": int(sl),
+        "avg_view_duration_seconds": round(avg_dur, 1) if avg_dur else 0,
+    }
+
+
+def pull_yearly_trends(analytics, today):
+    """Pull daily views/watch over channel lifetime, aggregate to yearly buckets."""
+    print("Pulling yearly trends (channel lifetime)...")
+    start = datetime.date(2008, 1, 1)
+
+    res = analytics.reports().query(
+        ids="channel==MINE",
+        startDate=start.isoformat(),
+        endDate=today.isoformat(),
+        metrics="views,estimatedMinutesWatched,subscribersGained,subscribersLost",
+        dimensions="day",
+        sort="day",
+        maxResults=10000,
+    ).execute()
+
+    by_year = {}
+    for row in res.get("rows", []):
+        ymd = row[0]  # YYYY-MM-DD
+        year = int(ymd.split("-")[0])
+        bucket = by_year.setdefault(year, {"views": 0, "watch_min": 0, "subs_gained": 0, "subs_lost": 0})
+        bucket["views"] += int(row[1])
+        bucket["watch_min"] += float(row[2])
+        bucket["subs_gained"] += int(row[3])
+        bucket["subs_lost"] += int(row[4])
+
+    # Skip leading years with zero activity so the chart starts at the first real year
+    years_sorted = sorted(by_year.keys())
+    first_active = next((y for y in years_sorted if by_year[y]["views"] > 0 or by_year[y]["subs_gained"] > 0), None)
+    if first_active is None:
+        return []
+
+    yearly = []
+    for y in range(first_active, today.year + 1):
+        b = by_year.get(y, {"views": 0, "watch_min": 0, "subs_gained": 0, "subs_lost": 0})
+        yearly.append({
+            "year": y,
+            "views": b["views"],
+            "watch": round(b["watch_min"] / 60, 1),
+            "subs_net": b["subs_gained"] - b["subs_lost"],
+        })
+    return yearly
+
+
 def pull_monthly_trends(analytics, today, months=16):
     """Pull daily views/watch and aggregate to monthly buckets.
 
@@ -457,8 +528,6 @@ def main():
     data_api = build("youtube", "v3", credentials=creds, cache_discovery=False)
 
     # Diagnostic: identify what channel the OAuth account actually owns.
-    # This catches a common gotcha where the refresh token was issued for a
-    # personal account that doesn't actually manage the target brand channel.
     try:
         mine_info = data_api.channels().list(part="snippet,statistics", mine=True).execute()
         items = mine_info.get("items", [])
@@ -488,8 +557,10 @@ def main():
 
     stats = safe("channel_stats", lambda: get_channel_stats(data_api, CHANNEL_ID), {})
     kpis = safe("kpis", lambda: pull_kpis(analytics, today), {})
+    lifetime = safe("lifetime_kpis", lambda: pull_lifetime_kpis(analytics, today), {})
     trends = safe("trends", lambda: pull_monthly_trends(analytics, today, TREND_MONTHS), [])
     trends = safe("uploads", lambda: pull_monthly_uploads(data_api, CHANNEL_ID, trends), trends)
+    yearly = safe("yearly_trends", lambda: pull_yearly_trends(analytics, today), [])
     top_videos = safe("top_videos", lambda: pull_top_videos(analytics, data_api, today, NUM_TOP_VIDEOS), [])
     traffic = safe("traffic", lambda: pull_traffic_sources(analytics, today), [])
     retention = pull_retention_top(top_videos) if top_videos else []
@@ -514,22 +585,24 @@ def main():
         "kpiSubChange": kpis.get("sub_change", 0),
         "kpiSubYoY": kpis.get("sub_yoy_pct", 0),
 
-        # Thumbnail impressions / CTR are not exposed via the public Analytics API.
-        # These values must be set manually via the dashboard editor when needed.
-        # The script preserves prior values if present.
+        "kpiViewsAllTime": lifetime.get("views", stats.get("views_total", 0) if stats else 0),
+        "kpiWatchAllTime": lifetime.get("watch_hours", 0),
+        "kpiSubChangeAllTime": lifetime.get("sub_change", 0),
+        "kpiSubsGainedAllTime": lifetime.get("subs_gained", 0),
+
         "kpiImpressions": None,
         "kpiImpYoY": None,
         "kpiCTR": None,
 
         "eraSplit": compute_era_split(trends),
         "trends": trends,
+        "yearlyTrends": yearly,
         "subs": subs_timeline,
         "videos": top_videos,
         "traffic": traffic,
         "retention": retention,
     }
 
-    # Preserve manually-set impressions/CTR from prior run, if data.json exists
     if os.path.exists(OUTPUT_PATH):
         try:
             with open(OUTPUT_PATH) as f:
@@ -540,7 +613,6 @@ def main():
         except Exception as e:
             print(f"  Could not load prior data.json: {e}")
 
-    # Final fallbacks for manual-only fields
     if output["kpiImpressions"] is None:
         output["kpiImpressions"] = 130000
     if output["kpiImpYoY"] is None:
@@ -556,7 +628,10 @@ def main():
     print(f"  Videos: {output['totalVideos']}")
     print(f"  Views (365d): {output['kpiViews']:,}")
     print(f"  Watch (365d): {output['kpiWatch']} hrs")
+    print(f"  Views (lifetime): {output['kpiViewsAllTime']:,}")
+    print(f"  Watch (lifetime): {output['kpiWatchAllTime']} hrs")
     print(f"  Trends: {len(trends)} months")
+    print(f"  Yearly trends: {len(yearly)} years")
     print(f"  Top videos: {len(top_videos)}")
     print(f"  Traffic sources: {len(traffic)}")
 
