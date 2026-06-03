@@ -10,6 +10,10 @@
   "kpiWatchYoY": 132,
   "kpiSubChange": 18,
   "kpiSubYoY": 64,
+  "kpiViewsAllTime": 106183,
+  "kpiWatchAllTime": 2979.3,
+  "kpiSubChangeAllTime": 222,
+  "kpiSubsGainedAllTime": 307,
   "kpiImpressions": 130000,
   "kpiImpYoY": 0,
   "kpiCTR": 2.5,
@@ -110,6 +114,80 @@
       "views": 1016,
       "watch": 22.2,
       "uploads": 8
+    }
+  ],
+  "yearlyTrends": [
+    {
+      "year": 2015,
+      "views": 561,
+      "watch": 20.9,
+      "subs_net": 2
+    },
+    {
+      "year": 2016,
+      "views": 1552,
+      "watch": 55.5,
+      "subs_net": 5
+    },
+    {
+      "year": 2017,
+      "views": 5177,
+      "watch": 138.8,
+      "subs_net": 7
+    },
+    {
+      "year": 2018,
+      "views": 10010,
+      "watch": 158.0,
+      "subs_net": 3
+    },
+    {
+      "year": 2019,
+      "views": 4672,
+      "watch": 128.8,
+      "subs_net": 6
+    },
+    {
+      "year": 2020,
+      "views": 7730,
+      "watch": 214.1,
+      "subs_net": 24
+    },
+    {
+      "year": 2021,
+      "views": 21635,
+      "watch": 765.5,
+      "subs_net": 67
+    },
+    {
+      "year": 2022,
+      "views": 23295,
+      "watch": 702.1,
+      "subs_net": 56
+    },
+    {
+      "year": 2023,
+      "views": 15990,
+      "watch": 469.3,
+      "subs_net": 24
+    },
+    {
+      "year": 2024,
+      "views": 4547,
+      "watch": 83.7,
+      "subs_net": 1
+    },
+    {
+      "year": 2025,
+      "views": 7436,
+      "watch": 138.2,
+      "subs_net": 20
+    },
+    {
+      "year": 2026,
+      "views": 3578,
+      "watch": 71.6,
+      "subs_net": 7
     }
   ],
   "subs": [
