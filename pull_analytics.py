@@ -456,6 +456,34 @@ def main():
     analytics = build("youtubeAnalytics", "v2", credentials=creds, cache_discovery=False)
     data_api = build("youtube", "v3", credentials=creds, cache_discovery=False)
 
+    # Diagnostic: identify what channel the OAuth account actually owns.
+    # This catches a common gotcha where the refresh token was issued for a
+    # personal account that doesn't actually manage the target brand channel.
+    try:
+        mine_info = data_api.channels().list(part="snippet,statistics", mine=True).execute()
+        items = mine_info.get("items", [])
+        if not items:
+            print("⚠ DIAGNOSTIC: channel==MINE returned no channel — OAuth account has no YouTube channel?")
+        else:
+            print(f"DIAGNOSTIC: OAuth account owns {len(items)} channel(s):")
+            for it in items:
+                cid = it["id"]
+                title = it["snippet"]["title"]
+                subs = it.get("statistics", {}).get("subscriberCount", "?")
+                vids = it.get("statistics", {}).get("videoCount", "?")
+                views = it.get("statistics", {}).get("viewCount", "?")
+                marker = "  ← TARGET" if cid == CHANNEL_ID else "  ← (different channel)"
+                print(f"  • {cid} '{title}' subs={subs} videos={vids} views={views}{marker}")
+            mine_id = items[0]["id"]
+            if mine_id != CHANNEL_ID:
+                print(f"⚠ DIAGNOSTIC: channel==MINE resolves to {mine_id}, but CHANNEL_ID is {CHANNEL_ID}.")
+                print(f"  All analytics (views, watch, trends, top videos, traffic) are for {mine_id}, not {CHANNEL_ID}.")
+                print(f"  To fix: either re-issue the OAuth refresh token from the account that owns {CHANNEL_ID},")
+                print(f"  or change YT_CHANNEL_ID to {mine_id} so the dashboard tracks the OAuth account's actual channel.")
+    except Exception as e:
+        print(f"⚠ DIAGNOSTIC failed: {type(e).__name__}: {e}")
+    print("")
+
     today = datetime.date.today()
 
     stats = safe("channel_stats", lambda: get_channel_stats(data_api, CHANNEL_ID), {})
