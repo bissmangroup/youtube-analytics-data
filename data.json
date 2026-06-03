@@ -1,10 +1,10 @@
 {
-  "_generated": "2026-06-02",
+  "_generated": "2026-06-03",
   "_generator": "github-actions",
   "totalVideos": "3410+",
   "totalSubs": 221,
-  "genDate": "2026-06-02",
-  "displayDate": "Jun 2, 2026",
+  "genDate": "2026-06-03",
+  "displayDate": "Jun 3, 2026",
   "kpiViews": 56,
   "kpiWatch": 0.6,
   "kpiWatchYoY": -48,
@@ -176,20 +176,20 @@
       "ret": 6.4
     },
     {
-      "title": "Homes for Sale in Lebanon, OH 923 Evergreen - Lebanon Ohio Realtor John Bissman Keller Williams",
-      "era": "pre",
-      "date": "Dec 19, 2013",
-      "views": 5,
-      "dur": "0:22",
-      "ret": 12.1
-    },
-    {
       "title": "Home for Sale, Goshen Ohio 1783 Hill Station Road, Goshen OH 45122 House for Sale",
       "era": "pre",
       "date": "Jan 28, 2014",
       "views": 5,
       "dur": "0:27",
       "ret": 14.0
+    },
+    {
+      "title": "Homes for Sale in Lebanon, OH 923 Evergreen - Lebanon Ohio Realtor John Bissman Keller Williams",
+      "era": "pre",
+      "date": "Dec 19, 2013",
+      "views": 5,
+      "dur": "0:22",
+      "ret": 12.1
     },
     {
       "title": "Property Search - Warren County, Ohio  How to Contest Warren County Property Valuations",
@@ -208,6 +208,14 @@
       "ret": 15.6
     },
     {
+      "title": "Homes in Lebanon Ohio 45036 for Sale - Historic Home in Downtown Lebanon 314 East Main - Must See",
+      "era": "pre",
+      "date": "Dec 27, 2013",
+      "views": 2,
+      "dur": "1:37",
+      "ret": 68.6
+    },
+    {
       "title": "IQ Custom Homes - Home Builder in Cincinnati Area - Build your own custom home",
       "era": "pre",
       "date": "Jun 27, 2013",
@@ -222,14 +230,6 @@
       "views": 2,
       "dur": "0:03",
       "ret": 21.3
-    },
-    {
-      "title": "Homes in Lebanon Ohio 45036 for Sale - Historic Home in Downtown Lebanon 314 East Main - Must See",
-      "era": "pre",
-      "date": "Dec 27, 2013",
-      "views": 2,
-      "dur": "1:37",
-      "ret": 68.6
     },
     {
       "title": "Property Search - Hamilton County, Ohio How to Contest Hamilton County Property Valuations",
@@ -284,12 +284,12 @@
       "pct": 6.4
     },
     {
-      "name": "Homes for Sale in Lebanon",
-      "pct": 12.1
-    },
-    {
       "name": "Home for Sale",
       "pct": 14.0
+    },
+    {
+      "name": "Homes for Sale in Lebanon",
+      "pct": 12.1
     }
   ]
 }
