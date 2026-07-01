@@ -1,30 +1,24 @@
 {
-  "_generated": "2026-06-03",
+  "_generated": "2026-07-01",
   "_generator": "github-actions",
-  "totalVideos": "3410+",
+  "totalVideos": "3421+",
   "totalSubs": 221,
-  "genDate": "2026-06-03",
-  "displayDate": "Jun 3, 2026",
-  "kpiViews": 8846,
-  "kpiWatch": 173.7,
-  "kpiWatchYoY": 132,
-  "kpiSubChange": 18,
-  "kpiSubYoY": 64,
-  "kpiViewsAllTime": 106183,
-  "kpiWatchAllTime": 2979.3,
-  "kpiSubChangeAllTime": 222,
+  "genDate": "2026-07-01",
+  "displayDate": "Jul 1, 2026",
+  "kpiViews": 9735,
+  "kpiWatch": 200.3,
+  "kpiWatchYoY": 165,
+  "kpiSubChange": 15,
+  "kpiSubYoY": 25,
+  "kpiViewsAllTime": 107507,
+  "kpiWatchAllTime": 3012.2,
+  "kpiSubChangeAllTime": 221,
   "kpiSubsGainedAllTime": 307,
   "kpiImpressions": 130000,
   "kpiImpYoY": 0,
   "kpiCTR": 2.5,
-  "eraSplit": 7,
+  "eraSplit": 6,
   "trends": [
-    {
-      "month": "Feb 25",
-      "views": 314,
-      "watch": 6.2,
-      "uploads": 2
-    },
     {
       "month": "Mar 25",
       "views": 661,
@@ -105,15 +99,21 @@
     },
     {
       "month": "Apr 26",
-      "views": 891,
+      "views": 892,
       "watch": 17.3,
       "uploads": 12
     },
     {
       "month": "May 26",
-      "views": 1016,
-      "watch": 22.2,
+      "views": 1000,
+      "watch": 21.4,
       "uploads": 8
+    },
+    {
+      "month": "Jun 26",
+      "views": 1339,
+      "watch": 33.4,
+      "uploads": 12
     }
   ],
   "yearlyTrends": [
@@ -185,39 +185,39 @@
     },
     {
       "year": 2026,
-      "views": 3578,
-      "watch": 71.6,
-      "subs_net": 7
+      "views": 4902,
+      "watch": 104.3,
+      "subs_net": 6
     }
   ],
   "subs": [
     {
-      "month": "Feb 25",
-      "value": 197
+      "month": "Mar 25",
+      "value": 200
     },
     {
-      "month": "Apr 25",
-      "value": 201
+      "month": "May 25",
+      "value": 204
     },
     {
-      "month": "Jun 25",
-      "value": 205
-    },
-    {
-      "month": "Aug 25",
+      "month": "Jul 25",
       "value": 210
     },
     {
-      "month": "Oct 25",
-      "value": 214
+      "month": "Sep 25",
+      "value": 212
     },
     {
-      "month": "Dec 25",
-      "value": 214
+      "month": "Nov 25",
+      "value": 216
     },
     {
-      "month": "Feb 26",
-      "value": 214
+      "month": "Jan 26",
+      "value": 215
+    },
+    {
+      "month": "Mar 26",
+      "value": 216
     }
   ],
   "videos": [
@@ -225,177 +225,177 @@
       "title": "Nature Lover’s Paradise with 6.4 acres 9 Car Garage & Sunroom | 1711 McClellan Rd Xenia Ohio 45385",
       "era": "pre",
       "date": "Jul 18, 2025",
-      "views": 563,
+      "views": 564,
       "dur": "0:39",
-      "ret": 35.0
+      "ret": 34.9
+    },
+    {
+      "title": "6075 Marathon Edenton Rd, Blanchester, OH 45107  5 Bed / 3 Bath Homestead with Barn, Pond, Pasture",
+      "era": "post",
+      "date": "Jun 8, 2026",
+      "views": 554,
+      "dur": "1:09",
+      "ret": 27.2
     },
     {
       "title": "5654 Wilmington Road, Oregonia, Ohio 45054  21+ Acres  Horse Barn  Pond  Family Homestead Stunning",
       "era": "post",
       "date": "Nov 26, 2025",
-      "views": 294,
-      "dur": "1:48",
-      "ret": 47.2
+      "views": 299,
+      "dur": "1:47",
+      "ret": 47.1
     },
     {
       "title": "House for Sale - MODERN FARMHOUSE ON 2+ ACRES | 1801 Kirby Rd, Lebanon, OH 45036 First Floor Primary",
       "era": "pre",
       "date": "Jul 21, 2025",
-      "views": 251,
+      "views": 252,
       "dur": "0:55",
-      "ret": 52.6
-    },
-    {
-      "title": "Own This Iconic Ohio Bar on the River! | Little River Bar & Grill | $1.5M Commercial Property",
-      "era": "pre",
-      "date": "Mar 25, 2025",
-      "views": 205,
-      "dur": "1:32",
-      "ret": 57.2
+      "ret": 52.8
     },
     {
       "title": "2622 Moore Rd Bethel Ohio 45106 | 6.63 Acre Wooded Home for Sale | 3 Bed 3 Bath with Covered Deck",
       "era": "post",
       "date": "May 22, 2026",
-      "views": 186,
-      "dur": "1:07",
-      "ret": 37.2
+      "views": 203,
+      "dur": "1:09",
+      "ret": 38.0
     },
     {
-      "title": "Hamilton Ohio Home for Sale | 1226 Clearview Place Updated 2 Bedroom House with Garage & Fenced Yard",
-      "era": "post",
-      "date": "Sep 2, 2025",
-      "views": 168,
-      "dur": "0:38",
-      "ret": 57.2
-    },
-    {
-      "title": "Fully Renovated Home for Sale in  Fairfield Twp 6399 Kimberly Dr | 4 Bed | Dream Kitchen |",
+      "title": "Own This Iconic Ohio Bar on the River! | Little River Bar & Grill | $1.5M Commercial Property",
       "era": "pre",
-      "date": "May 16, 2025",
-      "views": 160,
-      "dur": "0:39",
-      "ret": 44.7
-    },
-    {
-      "title": "2174 Belloak Dr Kettering Ohio 45440 Dayton Ohio Home for Sale | Large Basement Near Wright-Patt",
-      "era": "post",
-      "date": "Mar 13, 2026",
-      "views": 159,
-      "dur": "1:04",
-      "ret": 32.3
-    },
-    {
-      "title": "Rona Hills Custom Built 4-Bedroom Home – 625 Sharon Dr, Fairborn, OH 45324 | For Sale House for Sale",
-      "era": "post",
-      "date": "Sep 11, 2025",
-      "views": 154,
-      "dur": "0:54",
-      "ret": 72.6
-    },
-    {
-      "title": "Move-In Ready 2-Bedroom Paired Patio Fischer Home in Lebanon OH 45036 | The Lot in Summerlyn Farms",
-      "era": "pre",
-      "date": "Aug 1, 2025",
-      "views": 152,
-      "dur": "0:58",
-      "ret": 63.9
-    },
-    {
-      "title": "Farmhouse with Pool and In-Law Guest Suite 9+ Acres–4752 E Lower Springboro Rd, Waynesville OH 45068",
-      "era": "pre",
-      "date": "Aug 22, 2025",
-      "views": 148,
-      "dur": "1:19",
-      "ret": 60.1
-    },
-    {
-      "title": "Lebanon Landing Townhomes by Justin Doyle Homes – Lebanon, Ohio 45036 New Townhomes Lebanon Ohio",
-      "era": "post",
-      "date": "Dec 26, 2025",
-      "views": 134,
-      "dur": "1:00",
-      "ret": 32.4
+      "date": "Mar 25, 2025",
+      "views": 196,
+      "dur": "1:33",
+      "ret": 58.0
     },
     {
       "title": "Historic Hammel House | 121 S Main St, Waynesville, OH 45068 | Iconic Commercial Opportunity Airbnb",
       "era": "post",
       "date": "Apr 14, 2026",
-      "views": 129,
-      "dur": "1:51",
-      "ret": 51.3
+      "views": 179,
+      "dur": "1:55",
+      "ret": 53.4
     },
     {
-      "title": "Luxury Ranch in Miami Bluffs | 1556 Sycamore Ridge Dr Cincinnati Ohio | Finished Walkout Basement",
+      "title": "Hamilton Ohio Home for Sale | 1226 Clearview Place Updated 2 Bedroom House with Garage & Fenced Yard",
+      "era": "post",
+      "date": "Sep 2, 2025",
+      "views": 178,
+      "dur": "0:39",
+      "ret": 57.6
+    },
+    {
+      "title": "2174 Belloak Dr Kettering Ohio 45440 Dayton Ohio Home for Sale | Large Basement Near Wright-Patt",
+      "era": "post",
+      "date": "Mar 13, 2026",
+      "views": 163,
+      "dur": "1:05",
+      "ret": 32.7
+    },
+    {
+      "title": "Rona Hills Custom Built 4-Bedroom Home – 625 Sharon Dr, Fairborn, OH 45324 | For Sale House for Sale",
+      "era": "post",
+      "date": "Sep 11, 2025",
+      "views": 158,
+      "dur": "0:53",
+      "ret": 71.4
+    },
+    {
+      "title": "Move-In Ready 2-Bedroom Paired Patio Fischer Home in Lebanon OH 45036 | The Lot in Summerlyn Farms",
       "era": "pre",
-      "date": "May 30, 2025",
-      "views": 128,
-      "dur": "1:08",
-      "ret": 51.0
+      "date": "Aug 1, 2025",
+      "views": 155,
+      "dur": "0:59",
+      "ret": 65.1
+    },
+    {
+      "title": "Farmhouse with Pool and In-Law Guest Suite 9+ Acres–4752 E Lower Springboro Rd, Waynesville OH 45068",
+      "era": "pre",
+      "date": "Aug 22, 2025",
+      "views": 150,
+      "dur": "1:18",
+      "ret": 59.6
+    },
+    {
+      "title": "Lebanon Landing Townhomes by Justin Doyle Homes – Lebanon, Ohio 45036 New Townhomes Lebanon Ohio",
+      "era": "post",
+      "date": "Dec 26, 2025",
+      "views": 141,
+      "dur": "1:01",
+      "ret": 32.6
     },
     {
       "title": "1105 Mockingbird Lane, Lebanon, Ohio 45036 – Ranch Home with New Inground Pool & Privacy - For Sale",
       "era": "post",
       "date": "Oct 4, 2025",
-      "views": 128,
-      "dur": "1:25",
-      "ret": 49.4
+      "views": 130,
+      "dur": "1:24",
+      "ret": 48.7
+    },
+    {
+      "title": "117 Hickory Lane, Lebanon, Ohio 45036 | Luxury Estate McBurney Hills - Lebanon Ranch House for Sale",
+      "era": "post",
+      "date": "Mar 27, 2026",
+      "views": 130,
+      "dur": "1:27",
+      "ret": 43.9
     }
   ],
   "traffic": [
     {
       "name": "External Sites",
-      "pct": 34.6
+      "pct": 35.0
     },
     {
       "name": "YouTube Search",
-      "pct": 23.8
+      "pct": 22.3
     },
     {
       "name": "Subscriptions Feed",
-      "pct": 14.5
+      "pct": 14.0
     },
     {
       "name": "Playlists",
-      "pct": 13.8
+      "pct": 13.1
     },
     {
       "name": "Direct / Unknown",
-      "pct": 4.7
+      "pct": 7.4
     },
     {
       "name": "Suggested",
-      "pct": 4.4
+      "pct": 4.2
     },
     {
       "name": "Channel Pages",
-      "pct": 2.7
+      "pct": 2.6
     }
   ],
   "retention": [
     {
       "name": "Nature Lover’s Paradise with 6.4…",
-      "pct": 35.0
+      "pct": 34.9
+    },
+    {
+      "name": "6075 Marathon Edenton Rd",
+      "pct": 27.2
     },
     {
       "name": "5654 Wilmington Road",
-      "pct": 47.2
+      "pct": 47.1
     },
     {
       "name": "House for Sale - MODERN FARMHOUS…",
-      "pct": 52.6
-    },
-    {
-      "name": "Own This Iconic Ohio Bar on the …",
-      "pct": 57.2
+      "pct": 52.8
     },
     {
       "name": "2622 Moore Rd Bethel Ohio 45106 …",
-      "pct": 37.2
+      "pct": 38.0
     },
     {
-      "name": "Hamilton Ohio Home for Sale | 12…",
-      "pct": 57.2
+      "name": "Own This Iconic Ohio Bar on the …",
+      "pct": 58.0
     }
   ]
 }
